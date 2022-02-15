@@ -1,9 +1,23 @@
-<h1>My tasks</h1>
+<div class="container">
+  <h1>My tasks</h1>
 
-<ol>
-  <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task) %></li>
-  <% end %>
-</ol>
+  <ol>
+    <% @tasks.each do |task| %>
+      <li>
+        <% if task.completed%>
+          <i class="fa-solid fa-square-check"></i>
+        <% else %>
+          <i class="fa-solid fa-square"></i>
+        <% end %>
+        <%= link_to task.title, task_path(task) %>
+        <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
 
-<%= link_to 'ADD NEW TASK', new_task_path %>
+<%= link_to new_task_path do %>
+ <i class="fa-solid fa-circle-plus"> A D D</i>
+<% end %>
+</div>

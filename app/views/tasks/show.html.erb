@@ -1,6 +1,14 @@
-<h1><%= @task.title %></h1>
-<p><%= @task.details %></p>
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <p><%= @task.details %></p>
 
-<%= link_to 'back to list', tasks_path %>
-<%= link_to 'edit task', edit_task_path %>
-<%= link_to 'delete task', task_path(@task), method: :delete, data: { confirm: "Are you sure?" } %>
+  <div class="icons">
+    <%= link_to tasks_path do %>
+      <i class="fa-solid fa-backward"></i>
+    <% end %>
+    <%= link_to edit_task_path  do %>
+      <i class="fa-solid fa-pen-to-square"></i>
+    <% end %>
+  <%#= link_to 'delete task', task_path(@task), method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
