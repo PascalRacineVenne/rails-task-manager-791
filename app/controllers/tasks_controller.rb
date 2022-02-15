@@ -1,11 +1,11 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
-    # raise
   end
 
   def new
-    @task = Task.new
+    # @task = Task.new
+    # raise
   end
 
   def show
@@ -13,12 +13,12 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = Task.new
-    @task.save
+    # @task = Task.new
+    # @task.save
   end
   
   def edit
-    @task = Task.find(params[:id])
+    # @task = Task.find(params[:id])
   end
 
   def update
